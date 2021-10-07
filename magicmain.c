@@ -71,9 +71,8 @@ void print_Matrix(int a[3][3]){
 }
 
 
-
 int main(){
-    const int MAX_VALUE = 3000000;
+    const int MAX_VALUE = 500000000;
     int n_size = 3;
     int value = 15;
     int arr_1[][3] = { {4,9,2}, {3,7,5}, {8,1,6} }; 
@@ -102,16 +101,16 @@ int main(){
     char result;
     int counter = 0;
     do{
-        result = randomize_2D(arr_random, num, value);
-        counter++;
-    }while(result != YES && counter < MAX_VALUE); ///Keeping track of the counter helps us avoid infinite loop.
+            result = randomize_2D(arr_random, num, value);
+            counter++;
+    }while(result != YES && counter <= MAX_VALUE); ///Keeping track of the counter helps us avoid infinite loop.
     print_Matrix(arr_random);
     if(result == YES)
         printf("This matrix is a Lo Shu Magic Square\n\n");
     else{
         printf("Last generated matrix\n");
         printf("This matrix is not a Lo Shu Magic Square\n");
-        printf("The amount of squares generated meets the exceeded maximum = 3000000"); 
+        printf("The amount of squares generated meets the exceeded maximum = 500000000"); 
     }
 
     return 0;
